@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importa bibliotecas globais */
+@import 'primeicons/primeicons.scss';
+
+/* (somente quando SIDSC estiver instalado corretamente) */
+@import 'sidsc-components/styles/main.scss';
