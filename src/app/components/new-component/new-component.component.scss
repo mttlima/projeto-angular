@@ -1,0 +1,9 @@
+h2 {
+  color: blueviolet;
+}
+
+:host-context(.theme-dark) {
+  h2 {
+    background: rgb(26, 5, 145);
+  }
+}

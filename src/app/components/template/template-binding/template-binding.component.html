@@ -1,0 +1,56 @@
+<h2>Template</h2>
+<h3>Text Interpolation</h3>
+<!-- <p>{{ name }} - {{ age }} - {{ sum(2,3) }}</p> -->
+<p> {{ name }} - {{ age }}</p>
+
+<hr/>
+<h2>Property Binding</h2>
+<!-- <element [property]="value"></element> -->
+<button [disabled]="isDisabled">Button</button>
+
+<hr/>
+<h2>Attribute bindind</h2>
+<!-- <element [attr.attribute-you-are-targeting]="value"></element> -->
+<p [attr.title]="name" [attr.arial-label]="name">Matheus Lima</p>
+
+<hr/>
+<h2>Class and Style bindind</h2>
+<p [class.background-red]="age >= 24" [class.background-blue]="age < 24">
+{{ name }}
+</p>
+<p [style.text-decoration]="isTextDecoration">{{ age }}</p>
+
+<hr/>
+<h2>Event binding</h2>
+<!--
+  <element
+    (TargetEventName)='TemplateStatement'
+    ></element>
+-->
+
+<button (click)="sum()">+</button>
+<button (click)="sub()">-</button>
+<input (keydown.shift.t)="onKeyDown($event)">
+<div style="background: red; width:100px; height:80px; margin-top:10px"
+(mousemove)="onMouseMove($event)">
+</div>
+
+<!-- <hr/>
+<h3>Two-way binding</h3>
+<input [(ngModel)]="name">
+
+{{ name }} -->
+
+<hr/>
+<h3>Diretivas de atributo</h3>
+<div [ngClass]="{ 'background-red': isDisabled }" [ngStyle]="{
+  'font-size':'20px'
+}">Classes condicionais.
+</div>
+
+<div [ngStyle]="{
+  color: age > 24 ? 'green' : 'red',
+  'font-size':  age > 24 ? '20px' : '20px'
+}"
+>Estilo dinâmico
+</div>
