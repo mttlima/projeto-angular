@@ -8,14 +8,17 @@ import { TemplateBindingComponent } from './components/template/template-binding
 import { DscHeaderComponent } from 'sidsc-components/dsc-header';
 import { DscButtonHeaderComponent } from 'sidsc-components/dsc-button-header';
 import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
+import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
+import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: 
     [CommonModule, RouterOutlet, NewComponent,
-    TemplateBindingComponent, DscHeaderComponent,
-    DscButtonHeaderComponent, TemplateVariablesComponent],
+    TemplateBindingComponent, TemplateControlFlowComponent,
+    TemplateVariablesComponent, DscButtonHeaderComponent,
+    DscHeaderComponent, TemplateDeferrableViewsComponent],
   styles: [
     `
     h1 {
@@ -34,11 +37,10 @@ import { TemplateVariablesComponent } from './components/template/template-varia
     </dsc-button-header>
   </dsc-header>
 
+<!-- npx ng g c *components/udemy/... (g == generate, c == component)-->
 
   <h1>Curso de Angular</h1>
   <hr/>
-  <br/>
-
 
   <app-template-binding/>
   <!-- <div class="theme-dark">
@@ -46,6 +48,11 @@ import { TemplateVariablesComponent } from './components/template/template-varia
   </div> -->
 
   <app-template-variables/>
+
+  <app-template-control-flow/>
+
+  <app-template-deferrable-views/>
+  
   `,
 })
 export class AppComponent {
