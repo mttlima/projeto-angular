@@ -1,11 +1,132 @@
-<h2>Deferrable Views</h2>
-
+<!-- INTRODUÇÃO
 @defer {
-<app-new-component/>
+  <app-new-component/>
 } @placeholder {
-  <p>Mostrar antes de carregar algo</p>
+    <p>Mostrar antes de carregar algo</p>
 } @loading {
+    <p>Loading...</p>
+} @error {
+    <p>Loading failed :(</p>
+} -->
+      
+<!--
+on --- especifica uma condição de acionador usando um acionador da lista
+(idle, timer, viewport, interaction, hover, immediate, prefetch)
+
+when --- especifica uma condição imperativa com uma expressão que retorna
+um booleano. Quando esta expressão se torna verdadeira, o espaço reservado
+é trocado pelo conteúdo carregado lentamente(o que pode ser uma operação
+assíncrona se as dependências precisarem ser buscadas).
+            
+Nota: Vários on triggers são sempre condições OR. Da mesma forma, on misturado
+com when também são condições OR.
+-->
+
+
+<!-- @defer(on idle) {  -- valor default --
+ <app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
   <p>Loading...</p>
 } @error {
-  <p>Loading failed :(</p>
+  <p>Loading failed. :(</p>
+} -->
+
+<!-- @defer(on timer(5s)) {
+  <app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+
+<!-- @defer(on viewport) {
+  <app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+
+<!-- @defer(on hover) {
+  <app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+
+<!-- @defer(on immediate) { -- semelhante ao idle, porém ele carrega tudo quando acaba de renderezar a página
+  enquanto o idle somente após a página ficar inativa
+
+  <app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+
+
+<!-- @defer(on timer(5s); on interaction(trigger); on hover(trigger2)) {
+  <app-new-component/>
+} @placeholder() {
+  <p #trigger2>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+
+<!-- <button (click)="isTrue = true">Add True</button> -->
+
+<!-- @defer(when loadingData$ | async) {
+<app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+        
+
+<!-- @defer {
+<app-new-component/>
+} @placeholder(minimum 3s) {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+
+<h2 #trigger>Deferrable Views</h2>
+
+<!-- @defer {
+  <app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading(minimum 5s) {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
+} -->
+
+@defer(on interaction) {
+  <app-new-component/>
+} @placeholder() {
+  <p>Mostrar algo antes de carregar algo</p>
+} @loading() {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed. :(</p>
 }
