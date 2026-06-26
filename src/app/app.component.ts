@@ -10,15 +10,20 @@ import { DscButtonHeaderComponent } from 'sidsc-components/dsc-button-header';
 import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
+import { SignalsComponent } from './components/signals/signals.component';
+import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
+import { InputComponent } from './components/comunicacao-entre-components/input/input.component';
+import { OutputComponent } from './components/comunicacao-entre-components/output/output.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: 
-    [CommonModule, RouterOutlet, NewComponent,
+  imports: [CommonModule, RouterOutlet, NewComponent,
     TemplateBindingComponent, TemplateControlFlowComponent,
     TemplateVariablesComponent, DscButtonHeaderComponent,
-    DscHeaderComponent, TemplateDeferrableViewsComponent],
+    DscHeaderComponent, TemplateDeferrableViewsComponent,
+    SignalsComponent, OutputComponent, InputComponent,
+    PaiOuMaeComponent],
   styles: [
     `
     h1 {
@@ -52,6 +57,10 @@ import { TemplateDeferrableViewsComponent } from './components/template/template
   <app-template-control-flow/>
 
   <app-template-deferrable-views/>
+
+  <app-signals/>
+
+  <app-pai-ou-mae/>
   
   `,
 })
