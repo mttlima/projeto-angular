@@ -14,6 +14,7 @@ import { SignalsComponent } from './components/signals/signals.component';
 import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
 import { InputComponent } from './components/comunicacao-entre-components/input/input.component';
 import { OutputComponent } from './components/comunicacao-entre-components/output/output.component';
+import { AngularPipesComponent } from './components/pipes/angular-pipes/angular-pipes.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,7 @@ import { OutputComponent } from './components/comunicacao-entre-components/outpu
     TemplateVariablesComponent, DscButtonHeaderComponent,
     DscHeaderComponent, TemplateDeferrableViewsComponent,
     SignalsComponent, OutputComponent, InputComponent,
-    PaiOuMaeComponent],
+    PaiOuMaeComponent, AngularPipesComponent],
   styles: [
     `
     h1 {
@@ -61,6 +62,8 @@ import { OutputComponent } from './components/comunicacao-entre-components/outpu
   <app-signals/>
 
   <app-pai-ou-mae/>
+
+  <app-angular-pipes/>
   
   `,
 })

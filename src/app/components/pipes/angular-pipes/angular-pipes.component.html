@@ -1,0 +1,18 @@
+<h2>Pipes</h2>
+
+<ul> 
+  <li>Date: {{ date() | date: 'dd/MM/yyyy'}}</li>
+  <li>uppercase: {{ 'matheus lima' | uppercase }}</li>
+  <li>lowercasepipe {{ 'MELISSA LIMA' | lowercase }}</li>
+  <li>json {{ json() | json }}</li>
+  <li>async {{ loadingData$ | async }}</li>
+
+  <li>currency {{ 200.5 | currency : "BRL" }}</li>
+  <li>number {{ 2000.50 | number : "1.0-2" }}</li>
+  <li>percent {{ 0.257 | percent : "1.0-2" }}</li>
+  <li>
+    customString:
+    {{ "Matheus Lima" | customString }}</li>
+</ul> 
+
+

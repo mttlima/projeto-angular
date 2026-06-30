@@ -34,7 +34,7 @@ export class SignalsComponent {
 
   constructor () {
     effect(() => {
-      console.log(this.fullName())
+      // console.log(this.fullName())
       if (this.firstName() === "Melissa ") {
         alert()
       }
